@@ -59,6 +59,7 @@ class WholeHerd{
         void setListOfBorn(vector<string>);
 
         //whole herd list
+        
         void addToHerd(Goat);
         void showHerdList() const; //acts like a print function, but only shows names
         Goat searchHerd(string name); //should search for the goat by name and return the whole struct
