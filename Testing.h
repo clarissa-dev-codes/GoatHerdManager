@@ -15,6 +15,9 @@ struct Tests{
 };
 
 class Testing{
+    private:
+        Tests test; //the object for each goat
+        
     public:
         //getting
         string getDate();

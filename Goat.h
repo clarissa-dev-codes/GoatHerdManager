@@ -7,6 +7,7 @@
 #include "Testing.h"
 #include "Maintenance.h"
 #include "Meds.h"
+#include "Breeding.h"
 
 using namespace std;
 
@@ -32,6 +33,26 @@ struct Goat{
     Testing test;
     Meds medsList;
     Maintenance maintain;
+};
+
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ♥ Consolidated from Females and Males ♥ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+//for the female goats
+struct Female{
+    Goat fGoat;
+    bool milk = false;
+    Breeding Breed; //one object, def need it to be different for each breeding. 
+                    //  it does need to save each one though. That might be a problem
+
+                    // Well, unless I save each on to the database instantly. That might work and 
+                    //  just have the one object for the current breeding or the one that I'm 
+                    //  actually dealing with
+};
+
+//for the male goats (both bucks and wethers)
+struct Male{
+    Goat mGoat;
+    bool isCastrated;
+    string castrationDate;
 };
 
 //gives each goat a list of their children
@@ -98,6 +119,41 @@ class Goats{
 
         //virtual functions
         virtual void printInfo() const;
+};
+
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ♥ Consolidated from Females and Males headers ♥ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+//female goats
+class Females{
+    private:
+        Female fgoats;
+
+    public:
+        Breeding getBreedingInfo();
+        void setBreedingInfo();
+
+        void setMilk(bool answer);
+        bool getMilk();
+
+        //goat viewing is virtual in the goat header
+        virtual void viewGoat();
+};
+
+//male goats
+class Males{
+    private:
+        Male mgoats;
+
+    public:
+        //getters
+        bool isCastrated();
+        string getCastrationDate();
+
+        //setters
+        void setIsCastrated(bool);
+        void setCastrationDate(string);
+
+        //goat viewing is virtual in the goat header
+        virtual void viewGoat();
 };
 
 #endif

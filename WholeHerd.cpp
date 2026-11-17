@@ -20,7 +20,7 @@ int WholeHerd::getTradedNum() const{
 
 int WholeHerd::getDeathsNum() const{
     return numbers.deathsNum;
-    
+
 }
 
 int WholeHerd::getBornNum() const{

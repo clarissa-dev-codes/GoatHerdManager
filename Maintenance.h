@@ -15,6 +15,9 @@ struct Maint {
 };
 
 class Maintenance{
+    private: 
+        Maint stuff; //literally don't wanna type the whole thing out
+        
     public:
         //getters
         string getHoovesNotes();

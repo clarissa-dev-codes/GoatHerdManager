@@ -8,7 +8,8 @@
 
 using namespace std;
 
-//setters (void with parameters)
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ♥ Goat class ♥ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+
 void Goats::setName(string name){
     goat.name = name;
 }
@@ -160,4 +161,52 @@ Maintenance Goats::getMaintenance() const{
 
 vector<string> Goats::getListOfChildren() const{
     return children.listOfChildren;
+}
+
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ♥ Males class ♥ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+bool Males::isCastrated(){
+    return mgoats.isCastrated;
+}
+
+string Males::getCastrationDate(){
+    return mgoats.castrationDate;
+}
+
+void Males::setIsCastrated(bool answer){
+    mgoats.isCastrated = answer;
+}
+
+void Males::setCastrationDate(string date){
+    mgoats.castrationDate = date;
+}
+
+//gets the info for just one goat
+void Males::viewGoat(){
+
+}
+
+
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ♥ Females class ♥ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
+//can the goat be milked?
+void Females::setMilk(bool answer){
+    fgoats.milk = answer;
+}
+
+bool Females::getMilk(){
+    return fgoats.milk;
+}
+
+//comes from the breeding cpp file
+Breeding Females::getBreedingInfo(){
+    
+}
+
+//still needs to access the breeding info
+void Females::setBreedingInfo(){
+
+}
+
+//grabs the info of just one goat
+void Females::viewGoat(){
+
 }
